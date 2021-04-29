@@ -61,7 +61,7 @@ for (let index in todos) {
 
 
 alert(`Your Username is: ${currentUser}, and your ToDo's are: 
-${userTodo.userTodos.join("-\n")}`)
+- ${userTodo.userTodos.join("\n-")}`)
 
 
 // we want to add each item of the userTodos[] onto a new line of the alert message
