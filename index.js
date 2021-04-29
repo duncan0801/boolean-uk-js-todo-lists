@@ -36,8 +36,33 @@ for (let user in users) {
     console.log(`User ID: ${users[user]['id']}, ` + `User Name: ${users[user].name}, ` + `User City: ${users[user].address.city}`)
 }
 
-//Prompt the user fro a user id
+//Prompt the user for a user id
 //const yourUserId = Number(prompt(`What's your user ID?`))
-
+const inputId = Number(prompt(`What is the Id you wish to know more about `))
 //Dispaly an alert with th username and all the listed todos
+let currentUser
+let userTodos
+const userTodo = {
+    username: currentUser,
+    userTodos: []
+}
+
+for (let user in users) {
+    if (inputId === users[user].id) {
+        currentUser = users[user].username
+    }
+}
+
+for (let index in todos) {
+    if (inputId === todos[index].userId) {
+        userTodo.userTodos.push(todos[index].title)
+    }
+}
+
+
+alert(`Your Username is: ${currentUser}, and your ToDo's are: 
+${userTodo.userTodos.join("-\n")}`)
+
+
+// we want to add each item of the userTodos[] onto a new line of the alert message
 
